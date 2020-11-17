@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'channels',
+    'bootstrap4',
 ]
 
 ASGI_APPLICATION = 'config.routing.application'
