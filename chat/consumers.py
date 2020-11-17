@@ -1,5 +1,6 @@
 from channels.generic.websocket import WebsocketConsumer
 import json
+from . import sender
 
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
@@ -12,6 +13,8 @@ class ChatConsumer(WebsocketConsumer):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
 
+        answer = sender.ChatbotMessageSender().req_message_send(message).json()['bubbles'][0]['data']['description']
+
         self.send(text_data=json.dumps({
-            'message': '만나서 반갑습니다'
+            'message': answer
         }))
