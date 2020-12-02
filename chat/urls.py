@@ -6,5 +6,9 @@ app_name = 'chat'
 
 urlpatterns = [
     path('', views.index, name='main'),
-    path('login/', views.login, name='login'),
+    path('signin/', views.signin, name='signin'),
+    path('signup/', views.signup, name='signup'),
+    path('reservation/', views.reservation, name='reservation'),
+    path('houseKeeping/', views.houseKeeping, name='houseKeeping'),
+    path('fbConcierge/', views.fbConcierge, name='fbConcierge'),
 ]
